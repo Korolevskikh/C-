@@ -15,7 +15,7 @@ int GetMaxDigitFromNumber (int number)
     int LeftNumber = number / 10;
     int RightNumber = number % 10;
     int result = 0;
-    if (LeftNumber > RightNumber)
+    if (LeftNumber >= RightNumber)
     {
         result = LeftNumber;
     }
@@ -25,7 +25,10 @@ int GetMaxDigitFromNumber (int number)
     }
     return result;
 }
-int randomeNumber = GetRandomeNumberInRange(10,99);
+for (int i = 0; i < 10; i++)
+{
+   int randomeNumber = GetRandomeNumberInRange(10,99);
 int MaxDigit = GetMaxDigitFromNumber(randomeNumber);
 Console.WriteLine($"Набольшей цифрой числа {randomeNumber} является {MaxDigit}");
+}
 
