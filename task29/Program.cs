@@ -11,6 +11,6 @@ void NewArray(int[]arr)
         arr[i] = new Random().Next(0,10);
         Console.Write($"{arr[i]} ");
     }
+    Console.WriteLine();
 }
-
 NewArray(array);
