@@ -4,23 +4,23 @@
 [3 7 22 2 78] -> 76
 */
 
-int [] GetArray(int size, int minValue, int maxValue)
+double [] GetArray(int size)
 {
-    int [] res = new int[size];
+    double [] res = new double[size];
     for (int i = 0; i < res.Length; i++)
     {
-        res[i] = new Random().Next(minValue, maxValue+1);
+        res[i] = Math.Round(new Random().NextDouble(),3);
         Console.Write($"{res[i]} ");
     }
     return res;
 }
-int [] array = GetArray(10, 100, 1000);
+double [] array = GetArray(10);
+double result = 0;
 
-
-int MaxMinNumber (int [] array)
+void MaxMinNumber (double [] array)
 {
-    int Max = array[0];
-    int Min = array[0];
+    double Max = array[0];
+    double Min = array[0];
     for (int i = 1; i < array.Length; i++)
     {
         if (array[i]> Max)
@@ -35,6 +35,7 @@ int MaxMinNumber (int [] array)
     Console.WriteLine();
     Console.WriteLine(Max);
     Console.WriteLine(Min);
-    return Max - Min;
+    result = Max - Min;
 }
-Console.WriteLine($"Разница между Max и Min элементов массива = {MaxMinNumber(array)}");
+MaxMinNumber(array);
+Console.WriteLine($"Разница между Max и Min элементов массива = {result}"); 
