@@ -11,7 +11,7 @@ Console.WriteLine("Введите количество числел ряда Ф�
 int numSize = Convert.ToInt32(Console.ReadLine());
 int[] array = new int[numSize];
 Fibbonaci(numSize);
-PrintArray(array);
+Console.WriteLine(String.Join(" ", array));
 Console.WriteLine();
 
 int[] Fibbonaci (int numSize)
@@ -25,14 +25,5 @@ int[] Fibbonaci (int numSize)
     return array;
 }
 
-void PrintArray(int[] array)
-{
-    int count = array.Length;
-    int i = 0;
-    while(i < count)
-    {
-        Console.Write($"{array[i]} ");
-        i++;
-    }
-}
+
 
