@@ -13,7 +13,7 @@ int position = Convert.ToInt32(Console.ReadLine());
 int[,] array = GetArray(rows, columns, -10, 10);
 PrintArray(array);
 FindNamber(array);
-Console.WriteLine(FindNamber(array));
+
 int[,] GetArray(int m, int n, int min, int max)
 {
     int[,] array = new int[m, n];
@@ -27,28 +27,19 @@ int[,] GetArray(int m, int n, int min, int max)
     return array;
 }
 
-int FindNamber(int[,] array)
+void FindNamber(int[,] array)
 {
 int rows1 = position/10;
 int columns1 = position%10;
-int result = 0;
-for (int i = 0; i < array.GetLength(0); i++)
-{
-    if (i == rows1)
+if (array.GetLength(0)-1 > rows1 && array.GetLength(1)-1 > columns1)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            if (j == columns1)
-            {
-            result = array[i, j];
-            }
-        }
-
+        Console.WriteLine($"Значение элемента {array[rows1, columns1]}");
     }
-}
-
-return result;
-}
+else
+    {
+        Console.WriteLine("Такого значения нет");
+    }
+} 
 
 void PrintArray(int[,] array)
 {
