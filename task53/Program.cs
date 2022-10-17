@@ -21,7 +21,7 @@ int[,] GetArray(int rows, int columns)
     {
         for (int j = 0; j < columns; j++)
         {
-            matrix[i, j] = new Random().Next(1,10);
+            matrix[i, j] = new Random().Next(1,15);
         }
     }
     return matrix;
@@ -33,7 +33,7 @@ void PrintArray( int[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            Console.Write(array[i, j] + " ");
+            Console.Write($"{array[i, j]} \t");
         }
         Console.WriteLine();
     }
