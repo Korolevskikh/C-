@@ -26,9 +26,9 @@ PrintArray(array2);
 
 Console.WriteLine();
 
-int[,] arr = MultiArray(array1, array2);
 Console.WriteLine("Матрица С=А*В:");
-PrintArray(arr);
+MultiArray(array1, array2);
+
 
 
 int[,] GetArray(int rows, int columns)
@@ -57,15 +57,13 @@ void PrintArray( int[,] array)
     }
 }
 
-int[,] MultiArray(int[,] array1, int[,] array2)
+void MultiArray(int[,] array1, int[,] array2)
 {
-    int[,] matrix = new int[array1.GetLength(0), array2.GetLength(1)];
    int result = 0;
     for (int i = 0; i < array1.GetLength(0); i++)
     {
         for (int l = 0; l < array2.GetLength(1); l++)
         {
-           
             for (int j = 0; j < array1.GetLength(1); j++)
             {
                 for (int k = 0; k < array2.GetLength(0); k++) 
@@ -73,12 +71,13 @@ int[,] MultiArray(int[,] array1, int[,] array2)
  // и вот здесь пошла беда какая то, не могу понять как result в матрицу вернуть           
                 result =result + array1[i,j+1]*array2[k+1,l]; 
                 }
-               
             } 
-            matrix[i,l] = result;
+            
+            Console.Write($"{result} \t");
+            result = 0;
         }
-    }
-    return matrix;   
+        Console.WriteLine();
+    }   
 }
 
     
