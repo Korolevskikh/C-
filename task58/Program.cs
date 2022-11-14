@@ -59,7 +59,8 @@ void PrintArray( int[,] array)
 }
 
 
-    
+
+
 int[,] MultiArray(int[,] array1, int[,] array2)
 {
 int[,] result = new int[array1.GetLength(0), array2.GetLength(1)];
@@ -76,4 +77,3 @@ for (int i = 0; i < result.GetLength(0); i++)
 }
 return result;
 }
-
